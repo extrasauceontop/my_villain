@@ -13,9 +13,16 @@
   <script src="http://parsleyjs.org/dist/parsley.js"></script>
 
 <style>
-  body {
+/* I made a photo for the background, you can remove this is needed. Original code below... GJM */
+/* body {
     background-color: rgb(54, 8, 8);
-  }
+  } */
+
+body {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3c/Aerial_view_of_Woody_Island.jpg");
+        background-repeat:no-repeat;
+       background-size:cover;
+} 
 
   #top_row {
     background-color: lightsteelblue;
@@ -47,20 +54,21 @@
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
 </head> 
 
-<body>
+<body> 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><h2>Villain Island Villas!</h2></a>
+    <a class="navbar-brand" href="index.html"><h2>Villain Island Villas!</h2></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+<!-- All the links on the Header go to the correct pages. GJM -->
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#"><h3>Home Page</h3><span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html"><h3>Home Page</h3><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"><h3>Data Table</h3><span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="data_table.html"><h3>Data Table</h3><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="contact_information.html"><h3>About Us</h3><span class="sr-only">(current)</span></a>
@@ -68,8 +76,12 @@
       </ul>
     </div>
   </nav>
-
-
+  <div class="container">
+    <div class="well" class="text-center">
+      <h4 class="text-center"> Welcome To Villain Island Villas!</h4>
+      <h4 class="text-center"> The website is for helping you find your next Evil Base of Operations!</h4>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-md-3"></div>
@@ -109,8 +121,6 @@
               </form>
             </div>
           </div>
-
-
           <br>
           <form class="form-inline">
             <div class="form-group">
@@ -125,13 +135,13 @@
     </div>
   </div>
   <br>
-  <br>
+  </br>
   <div class="row">
     <div class="col-md-6">
       <div id="scatter"></div>
     </div>
   </div>
-  <br>
+  <br></br>
   <div class="row">
     <div class="col-md-12">
       <div class=well>
@@ -143,7 +153,7 @@
     </div>
   </div>
   <br>
-  <br>
+ </br>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
