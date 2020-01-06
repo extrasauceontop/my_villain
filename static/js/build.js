@@ -1,10 +1,8 @@
 // Fill in the drop down menus
 function drop_down_update() {
   // Read in the data and make promise
-  d3.json("static/data/island_info.json").then((datum) => {
-      // turn data from string to json
-      var data = JSON.parse(datum)
-
+  d3.json("/data_one").then((data) => {
+    
       // grab drop downs
       var drop_down_1 = d3.select("#first_selection")
       var drop_down_2 = d3.select("#second_selection")
@@ -14,9 +12,15 @@ function drop_down_update() {
       var keys = Object.entries(data)
       var first_key = keys[0]
       var attributes = Object.keys(first_key[1])
-      var attributes = attributes.splice(4)
+      var attributes = attributes.splice(1)
       attributes.pop()
       attributes.pop()
+      attributes.pop()
+      attributes.pop()
+      var index = attributes.indexOf('Country')
+      if (index > -1) {
+        attributes.splice(index,1)
+      }
       attributes.unshift("No Selection")
 
       // Append attributes to dropdowns
@@ -27,8 +31,7 @@ function drop_down_update() {
       })
   })
 
-  d3.json("static/data/merged_countries.json").then((datum) => {
-    var data = JSON.parse(datum)
+  d3.json("/data_two").then((data) => {
 
     // Grab the dropdown
     var country_drop_1 = d3.select("#country_selection_1")
@@ -47,9 +50,7 @@ function drop_down_update() {
 
 function grab_params_and_filter() {
 
-  d3.json("static/data/island_info.json").then((datum) => {
-    // turn data from string to json
-    var data = JSON.parse(datum)
+  d3.json("/data_one").then((data) => {
     
     keys = Object.entries(data)
 
@@ -172,9 +173,7 @@ function make_scatter(data) {
 }
 
 function make_bar() {
-  d3.json("static/data/merged_countries.json").then((datum) => {
-    // turn data from string to json
-    var data = JSON.parse(datum)
+  d3.json("/data_two").then((data) => {
       
     var keys = Object.entries(data)
     var countrys = []
