@@ -167,7 +167,7 @@ QtPy==1.9.0
 requests==2.22.0
 robin-stocks==0.9.9.5
 rope==0.14.0
-rsa==3.4.2
+rsa==4.1
 ruamel-yaml==0.15.46
 s3transfer==0.2.1
 scikit-image==0.15.0
